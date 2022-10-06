@@ -4,23 +4,14 @@ import Display from "./Display";
 import { ImCross } from "react-icons/im";
 
 function Todo() {
-  //   const todoStorage = localStorage.getItem("Todo") || '["hi"] ';
-  //   const doneStorage = localStorage.getItem("Done") || '["hi"] ';
-  //   const t = JSON.parse(todoStorage);
-  //   const [todo, setTodo] = useState(JSON.stringify(todoStorage));
-  //   const [done, setDone] = useState(JSON.stringify(doneStorage));
-  const a = {
-    as: "as",
-    az: "az",
-    ad: "ad",
+  const todoStorage = localStorage.getItem("Todo") || {
+    "Bring Milk and Bread": "Bring Milk and Bread",
   };
-  const aa = {
-    aas: "aas",
-    aaz: "aaz",
-    aad: "aad",
+  const doneStorage = localStorage.getItem("Done") || {
+    "Clean My Room": "Clean My Room",
   };
-  const [todo, setTodo] = useState(aa);
-  const [done, setDone] = useState(a);
+  const [todo, setTodo] = useState(JSON.stringify(todoStorage));
+  const [done, setDone] = useState(JSON.stringify(doneStorage));
 
   const onAddFromTodo = (data) => {
     updatedDoneObject(data);
