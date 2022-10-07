@@ -3,13 +3,17 @@ import Button from "./Button";
 
 function AddTodo({ addTodo }) {
   const [click, setClick] = useState(true);
+  const [disable, setDisable] = useState(0);
   const [input, setInput] = useState("");
   function handleInputChange(event) {
     const newInput = event.target.value;
+
     if (newInput != "") {
       setInput(event.target.value);
+      setDisable(1);
     }
   }
+
   function handleButtonClick() {
     setClick(!click);
   }
