@@ -15,9 +15,11 @@ function AddTodo({ addTodo }) {
   }
   function submitForm(event) {
     event.preventDefault();
-    addTodo(input);
-    setClick(!click);
-    setInput("");
+    if (input != "") {
+      addTodo(input);
+      setClick(!click);
+      setInput("");
+    }
   }
   function resetForm() {
     setInput("");

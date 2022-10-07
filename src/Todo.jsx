@@ -4,14 +4,19 @@ import Display from "./Display";
 import { ImCross } from "react-icons/im";
 
 function Todo() {
-  const todoStorage = localStorage.getItem("Todo") || {
-    "Bring Milk and Bread": "Bring Milk and Bread",
-  };
-  const doneStorage = localStorage.getItem("Done") || {
-    "Clean My Room": "Clean My Room",
-  };
-  const [todo, setTodo] = useState(JSON.stringify(todoStorage));
-  const [done, setDone] = useState(JSON.stringify(doneStorage));
+  // const todoStorage = localStorage.getItem("Todo") || "{}";
+  // const doneStorage = localStorage.getItem("Done") || "{}";
+  // const td = JSON.stringify(todoStorage);
+  // const dd = JSON.stringify(doneStorage);
+  // console.log(td);
+  // console.log(dd);
+  // const [todo, setTodo] = useState(td);
+  // const [done, setDone] = useState(dd);
+
+  const td = { "Bring Milk and Bread": "Bring Milk and Bread" };
+  const dd = { "Clean my room": "Clean my room" };
+  const [todo, setTodo] = useState(td);
+  const [done, setDone] = useState(dd);
 
   const onAddFromTodo = (data) => {
     updatedDoneObject(data);
@@ -31,7 +36,6 @@ function Todo() {
   const addTodo = (data) => {
     const newTodo = { ...todo, [data]: data };
     setTodo(newTodo);
-    console.log("NewTodo", newTodo);
   };
 
   const updatedDoneObject = (data) => updateDone({ ...done, [data]: data });
@@ -77,6 +81,7 @@ function Todo() {
               data={item}
               onAdd={onAddFromDone}
               checked="true"
+              readOnly="readOnly"
             />
             <ImCross
               className="w-2 text-end"
@@ -90,15 +95,3 @@ function Todo() {
 }
 
 export default Todo;
-
-// name
-
-// Things to be done heading
-
-// list
-
-// add Todo = button
-
-// Things done heading
-
-// list cross button
