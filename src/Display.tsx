@@ -44,7 +44,7 @@ const Display: FC<DisplayProps> = ({
   }
   console.log("showEditButton", editingId);
   return (
-    <div className={"flex justify-between my-2 items-center " + border}>
+    <div className={"flex justify-between my-2 items-center  " + border}>
       <div className="flex items-center pl-1 max-w-[95%]">
         <input
           readOnly={readOnly}

@@ -37,7 +37,11 @@ const AddTodo: FC<AddTodoProps> = ({ addTodo }) => {
       ) : (
         <div className="space-y-4">
           <h1 className="text-">Create a Todo</h1>
-          <input type="text-xl" onChange={handleInputChange} value={input} />
+          <input
+            className="dark:text-black px-1"
+            onChange={handleInputChange}
+            value={input}
+          />
           <div className="flex">
             <div className="w-20 h-8 mr-4">
               <Button onClick={handleSaveButtonClick}>Save</Button>

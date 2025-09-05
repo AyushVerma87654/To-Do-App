@@ -5,7 +5,7 @@ type ButtonData = ButtonHTMLAttributes<HTMLButtonElement>;
 const Button: FC<ButtonData> = ({ children, ...rest }) => {
   return (
     <button
-      className="bg-green-500 text-yellow-300 flex items-cnter justify-center rounded-md text-lg w-full h-full"
+      className="bg-green-500 text-yellow-300 dark:text-white dark:bg-blue-900 flex items-cnter justify-center rounded-md text-lg w-full h-full"
       {...rest}
     >
       {children}

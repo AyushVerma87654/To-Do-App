@@ -80,10 +80,10 @@ function Todo() {
   };
 
   return (
-    <div className="bg-red-500 p-6 sm:p-10 h-screen overflow-y-scroll">
+    <div className="dark:bg-gray-900 p-6 sm:p-10">
       <div className="flex items-center justify-between">
         <h1 className="text-blue-700 font-bold mb-10 text-3xl">My Todo's</h1>
-        <div>
+        <div className="mr-14">
           {list.length > 0 && (
             <div className="flex items-center gap-2">
               <MdEdit
